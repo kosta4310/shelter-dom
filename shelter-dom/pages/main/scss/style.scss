@@ -1,0 +1,28 @@
+@import "../../../assets/global-scss/normalize";
+@import "../../../assets/global-scss/fonts";
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+@import "../../../assets/global-scss/addition";
+
+body {
+  // min-height: 100%;
+  // max-width: 1280px;
+  @include font-arial;
+  font-size: 15px;
+  line-height: 24px;
+  color: $color-dark-xl;
+  background: url(../../../assets/images/noise_transparent@2x.png),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+}
+
+@import "header";
+@import "not-only";
+@import "about";
+@import "our-friends";
+@import "help";
+@import "in-addition";
+@import "footer";

@@ -1,0 +1,129 @@
+.in-addition {
+  background-color: $color-light-l;
+  padding: 80px 0 100px 0;
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 30px;
+    @include media-laptop {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 60px 0;
+    }
+    @include media-tablet {
+      gap: 42px 0;
+    }
+  }
+
+  &__image {
+    img {
+      display: block;
+      margin: 0 auto;
+      min-width: 505px;
+      @include media-laptop {
+        width: 60%;
+        padding: 0 14.2665%;
+      }
+      @include media-tablet {
+        min-width: 260px;
+        padding: 0;
+        min-height: 135.2px;
+      }
+    }
+    @include media-laptop {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    @include media-tablet {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    width: 300px;
+    h3 {
+      @include media-tablet {
+        @include h3-mobile;
+        color: $color-dark-l;
+      }
+    }
+    @include media-tablet {
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
+  &__label {
+    h5 {
+      @include media-tablet {
+        letter-spacing: 0;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__card {
+  }
+
+  &__text {
+    width: 380px;
+    text-align-last: left;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: #b2b2b2;
+    @include media-tablet {
+      width: fit-content;
+      text-align: justify;
+      padding: 0 10px;
+    }
+  }
+  @include media-tablet {
+    padding: 42px 0;
+  }
+}
+.number-card {
+  &__button {
+    display: flex;
+    width: 349px;
+    box-sizing: border-box;
+    background-color: $color-primary;
+    padding: 10px 15px;
+    border-radius: 9px;
+    justify-content: space-between;
+    &:hover {
+      background-color: $color-primary_light;
+    }
+    @include media-tablet {
+      justify-content: center;
+      gap: 0 15px;
+      width: fit-content;
+    }
+
+    // gap: 0 15px;
+  }
+
+  &__icon {
+    img {
+      display: block;
+    }
+  }
+
+  &__number {
+    h4 {
+      @include media-tablet {
+        @include h5-mobile;
+      }
+    }
+  }
+}

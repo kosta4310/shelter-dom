@@ -1,0 +1,398 @@
+.our-friends {
+  color: $normal_color;
+  background: #f6f6f6;
+  padding: 80px 0 100px 0;
+
+  &__title {
+    padding-bottom: 60px;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    @include media-laptop {
+      padding-bottom: 30px;
+    }
+    h3 {
+      @include media-tablet {
+        @include h3-mobile;
+        color: $color-dark-l;
+      }
+    }
+    @include media-tablet {
+      padding-bottom: 42px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px 40px;
+    // margin-bottom: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include media-tablet {
+      flex-direction: column;
+      gap: 30px 0;
+    }
+  }
+  .slider-pets {
+    width: 1200px;
+    height: 930px;
+    margin: 0 auto;
+    position: relative;
+    // overflow: hidden;
+    padding-bottom: 30px;
+
+    @include media-laptop {
+      width: 580px;
+      height: 1365px;
+      margin-bottom: 10px;
+      & :nth-child(1n + 7) {
+        display: none;
+      }
+    }
+    @include media-tablet {
+      width: 270px;
+      height: 1365px;
+      margin-bottom: 42px;
+      padding-bottom: 0;
+      & :nth-child(1n + 4) {
+        display: none;
+      }
+    }
+  }
+  &__column {
+  }
+
+  &__item {
+  }
+  @include media-laptop {
+    padding-bottom: 76px;
+  }
+  @include media-tablet {
+    padding: 42px 0;
+  }
+}
+
+.card {
+  width: 270px;
+  height: 435px;
+  // text-align: center;
+  background-color: $link_active_color;
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px 0;
+  justify-content: flex-start;
+  &__image {
+    img {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    // margin-bottom: 28px;
+  }
+
+  &__button {
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #fff;
+    .button {
+      background-color: $button-active;
+      border: 2px solid $button-active;
+    }
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    .card__image {
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+  }
+}
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 13px 43px;
+  line-height: 22px;
+  border-radius: 100px;
+  border: 2px solid $button-fill-inactive;
+  font-size: 17px;
+  @include font-georgia;
+  // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  letter-spacing: 0.06em;
+  background-color: transparent;
+  color: #292929;
+}
+
+.pagination {
+  font-size: 20px;
+  @include font-georgia;
+  // line-height: 115%;
+  line-height: 24px;
+  // text-align: center;
+  letter-spacing: 0.06em;
+  // column-gap: 20px;
+  &__row {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    @include media-tablet {
+      gap: 0 10px;
+    }
+  }
+}
+.button-page {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  // position: relative;
+  background-color: inherit;
+  width: 52px;
+  height: 52px;
+  box-sizing: border-box;
+  color: $page-bautton-inactive_color;
+  border: 2px solid $page-bautton-inactive_color;
+  border-radius: 50%;
+  span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
+  }
+}
+.page {
+  &__left-left {
+    border: 2px solid $button-fill-inactive;
+    color: $hover_color;
+    &:hover {
+      background-color: $button-active;
+      border: 2px solid $button-active;
+    }
+  }
+
+  &__left {
+    border: 2px solid $button-fill-inactive;
+    color: $hover_color;
+    &:hover {
+      background-color: $button-active;
+      border: 2px solid $button-active;
+    }
+  }
+
+  &__right {
+    border: 2px solid $button-fill-inactive;
+    color: $hover_color;
+    &:hover {
+      background-color: $button-active;
+      border: 2px solid $button-active;
+    }
+  }
+
+  &__right-right {
+    border: 2px solid $button-fill-inactive;
+    color: $hover_color;
+    &:hover {
+      background-color: $button-active;
+      border: 2px solid $button-active;
+    }
+  }
+}
+.button-page[disabled] {
+  color: $color-dark-s;
+  border: 2px solid $color-dark-s;
+  background-color: transparent;
+  :hover {
+    background-color: transparent;
+    border: 2px solid $color-dark-s;
+  }
+  span:hover {
+    border: none;
+  }
+}
+.page-number {
+  background-color: $button-fill-inactive;
+  color: $hover_color;
+  border: 2px solid $button-fill-inactive;
+  &:hover {
+    cursor: default;
+  }
+}
+@import "../../../assets/global-scss/modal";
+// .overlay-pop-up {
+//   @include overlay;
+
+//   z-index: $zIndexOverlay;
+// }
+// .modal {
+//   position: absolute;
+//   display: flex;
+//   align-items: center;
+//   top: calc(50% + 60px);
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 900px;
+//   height: 500px;
+//   border-radius: 9px;
+//   background-color: $color-light-s;
+//   padding-right: 20px;
+//   box-sizing: border-box;
+//   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+//   &__row {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 0 30px;
+//     @include media-laptop {
+//       gap: 0;
+//     }
+//   }
+
+//   &__image {
+//     img {
+//       box-sizing: border-box;
+//       display: block;
+//       max-width: 500px;
+//       border-radius: 9px 0 0 9px;
+//       @include media-laptop {
+//         max-width: 350px;
+//       }
+//     }
+//     @include media-tablet {
+//       display: none;
+//     }
+//   }
+
+//   &__content {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: start;
+//     text-align: left;
+//     @include media-tablet {
+//       align-items: center;
+//       text-align: center;
+//     }
+//   }
+
+//   &__name {
+//     color: $color-dark;
+//     margin-bottom: 10px;
+//     h3 {
+//       line-height: 35px;
+//     }
+//   }
+
+//   &__subtitle {
+//     margin-bottom: 40px;
+//     @include media-laptop {
+//       margin-bottom: 20px;
+//     }
+//   }
+//   z-index: $zIndexMenu;
+//   cursor: auto;
+//   @include media-laptop {
+//     width: 630px;
+//     height: 350px;
+//   }
+//   @include media-tablet {
+//     width: 240px;
+//     height: 341px;
+//     padding: 10px;
+//   }
+// }
+// .type {
+//   display: inline;
+// }
+// .breed {
+//   display: inline;
+// }
+// .content {
+//   &__description {
+//     margin-bottom: 40px;
+//     @include media-laptop {
+//       margin-bottom: 20px;
+//       line-height: 14.3px;
+//     }
+//     @include media-tablet {
+//       text-align: justify;
+//     }
+//   }
+
+//   &__list {
+//   }
+// }
+// .list {
+//   align-items: center;
+//   li {
+//     @include h5-modal-window;
+//     padding-bottom: 10px;
+//     h5 {
+//       // align-items: start;
+//       font-weight: 400;
+//       display: inline-block;
+//     }
+//     // display: flex;
+//     align-items: center;
+//     @include media-laptop {
+//       padding-bottom: 5px;
+//     }
+//   }
+//   li:last-child {
+//     padding-bottom: 0;
+//   }
+//   li::before {
+//     content: "";
+//     display: inline-block;
+//     position: relative;
+//     top: -3px;
+//     left: 0;
+//     background-color: $color-primary;
+//     height: 4px;
+//     width: 4px;
+//     border-radius: 50px;
+//     margin-right: 10px;
+//   }
+//   @include media-tablet {
+//     text-align: left;
+//   }
+// }
+// .age {
+// }
+// .inoculations {
+// }
+// .diseases {
+// }
+// .parasites {
+// }
+
+// .button-close-modal {
+//   display: flex;
+//   position: absolute;
+//   top: -52px;
+//   right: -42px;
+//   width: 52px;
+//   height: 52px;
+//   border-radius: 50%;
+//   background-color: transparent;
+//   align-items: center;
+//   justify-content: center;
+//   border: 2px solid $color-primary;
+//   &:hover {
+//     cursor: pointer;
+//   }
+//   &__image {
+//     background: url(../../../assets/icons/Vector.svg);
+//     width: 12px;
+//     height: 12px;
+//   }
+//   @include media-laptop {
+//     right: -43px;
+//   }
+// }

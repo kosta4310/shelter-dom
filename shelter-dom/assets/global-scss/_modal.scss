@@ -1,0 +1,183 @@
+.overlay-pop-up {
+  @include overlay;
+
+  z-index: 15;
+  // overflow: scroll;
+}
+.modal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  // max-height: 100%;
+
+  // overflow-y: auto;
+  // top: calc(50% + 60px);
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  // height: 500px;
+  border-radius: 9px;
+  background-color: $color-light-s;
+  padding-right: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 30px;
+    @include media-laptop {
+      gap: 0 10px;
+    }
+  }
+
+  &__image {
+    img {
+      box-sizing: border-box;
+      display: block;
+      max-width: 500px;
+      border-radius: 9px 0 0 9px;
+      @include media-laptop {
+        max-width: 350px;
+      }
+    }
+    @include media-tablet {
+      display: none;
+    }
+  }
+
+  &__content {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    align-items: start;
+    text-align: left;
+    @include media-laptop {
+      padding: 10px 0;
+    }
+    @include media-tablet {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__name {
+    color: $color-dark;
+    margin-bottom: 10px;
+    h3 {
+      line-height: 35px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+    @include media-laptop {
+      margin-bottom: 20px;
+    }
+  }
+  z-index: 20;
+  cursor: auto;
+  @include media-laptop {
+    width: 630px;
+    // height: 350px;
+  }
+  @include media-tablet {
+    width: 240px;
+    // height: 341px;
+    padding: 10px;
+  }
+}
+.type {
+  display: inline;
+}
+.breed {
+  display: inline;
+}
+.content {
+  &__description {
+    margin-bottom: 40px;
+    @include media-laptop {
+      margin-bottom: 20px;
+      line-height: 14.3px;
+    }
+    @include media-tablet {
+      text-align: justify;
+    }
+  }
+
+  &__list {
+  }
+}
+.list {
+  align-items: center;
+  li {
+    @include h5-modal-window;
+    padding-bottom: 10px;
+    h5 {
+      // align-items: start;
+      font-weight: 400;
+      display: inline-block;
+    }
+    // display: flex;
+    align-items: center;
+    @include media-laptop {
+      padding-bottom: 5px;
+    }
+  }
+  li:last-child {
+    padding-bottom: 0;
+  }
+  li::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    left: 0;
+    background-color: $color-primary;
+    height: 4px;
+    width: 4px;
+    border-radius: 50px;
+    margin-right: 10px;
+  }
+  @include media-tablet {
+    text-align: left;
+  }
+}
+.age {
+}
+.inoculations {
+}
+.diseases {
+}
+.parasites {
+}
+
+.button-close-modal {
+  display: flex;
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $color-primary;
+  &:hover {
+    cursor: pointer;
+    // background-color: $color-primary;
+  }
+  &__image {
+    background: url(../../../assets/icons/Vector.svg);
+    width: 12px;
+    height: 12px;
+  }
+  @include media-laptop {
+    right: -43px;
+  }
+  z-index: 20;
+}

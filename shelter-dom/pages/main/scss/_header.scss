@@ -1,0 +1,90 @@
+.header {
+  padding: 60px 0;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media-tablet {
+      justify-content: flex-end;
+      // gap: 0 44px;
+      padding-right: 45px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include media-tablet {
+      margin-right: 42px;
+      z-index: $zIndexLogo;
+    }
+  }
+
+  &__menu {
+  }
+  @include media-laptop {
+    padding: 30px 0;
+  }
+}
+
+.logo {
+  &__title {
+    display: block;
+    margin: 0;
+    @include font-georgia;
+    font-size: 32px;
+    line-height: 35px;
+    padding-bottom: 10px;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+    @include media-tablet {
+      white-space: nowrap;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin: 0;
+    font-size: 13px;
+    line-height: 15px;
+
+    letter-spacing: 0.1em;
+    color: #ffffff;
+  }
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 0 36px;
+  li {
+    font-size: 15px;
+    line-height: 24px;
+    color: $color-dark-s;
+    margin: 0;
+    a:hover {
+      color: $color-light-s;
+    }
+  }
+  a {
+    color: inherit;
+  }
+  &_activated {
+    a {
+      color: $color-light-s;
+    }
+
+    border-bottom: 3px solid $color-primary;
+  }
+  @include media-tablet {
+    display: none;
+  }
+}
+@import "../../../assets/global-scss/hamburger";
+@import "../../../assets/global-scss/header-menu-open";
+
+.overlay {
+  @include media-tablet {
+    @include overlay;
+  }
+}

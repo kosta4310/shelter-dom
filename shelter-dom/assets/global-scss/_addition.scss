@@ -1,0 +1,135 @@
+$color-primary: #f1cdb3;
+$color-primary_light: #fddcc4;
+$color-dark-3xl: #292929;
+$color-light-l: #f6f6f6;
+$color-dark-s: #cdcdcd;
+$color-light-s: #fafafa;
+$color-light-xl: #ffffff;
+$color-dark-l: #545454;
+$color-dark-xl: #4c4c4c;
+$color-dark: #000000;
+// -------------------------
+$zIndexOverlay: 4;
+$zIndexMenu: 5;
+$zIndexLogo: 10;
+$zIndexHamburger: 10;
+@mixin font-georgia {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-georgia;
+}
+@mixin font-arial {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+}
+h2 {
+  font-size: 44px;
+  line-height: 57px;
+  color: $color-light-xl;
+}
+h3 {
+  font-size: 35px;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  color: $color-dark-l;
+}
+h4 {
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: $color-dark;
+}
+h5 {
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  color: $color-dark-l;
+}
+
+@mixin h3_mobile {
+  @include font-georgia();
+  font-size: 25px;
+  line-height: 32px;
+  letter-spacing: 0.06em;
+  color: $color-light-xl;
+}
+@mixin h5-mobile {
+  @include font-georgia();
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  color: $color-dark-l;
+}
+@mixin h5-modal-window {
+  @include font-georgia();
+  font-size: 15px;
+  line-height: 16.5px;
+  letter-spacing: 0.06em;
+  color: $color-dark;
+  font-weight: 700;
+}
+$content-width: 1279px;
+$tablet-width: 767px;
+$mobil-width: 319px;
+$max-height-mobile-menu: 500px;
+@mixin media-laptop {
+  @media (max-width: $content-width) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin media-mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+@mixin media-tablet-with-height {
+  @media (max-width: $tablet-width), (max-height: 500px) {
+    @content;
+  }
+}
+html {
+}
+.wrapper {
+  max-width: 1280px;
+  box-sizing: border-box;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @include media-laptop {
+    padding: 0 30px;
+  }
+  @include media-tablet() {
+    padding: 0 10px;
+  }
+}
+@mixin overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(41, 41, 41, 0.6);
+  // z-index: $zIndexOverlay;
+  cursor: pointer;
+
+  transition: all ease-in 0.5s;
+}
